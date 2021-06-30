@@ -1,0 +1,44 @@
+.logo {
+    margin-right: 50px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.header-container {
+    position: fixed;
+    display: flex;
+    padding: 0 4%;
+    height: 68px;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(1,1,1,0) 100%);
+    z-index: 999;
+    transition: background .5s ease;
+}
+
+.first-nav {
+    margin-right: auto;
+}
+
+.nav-list {
+    display: flex;
+    align-items: baseline;
+}
+
+.nav-link{
+    color: #e5e5e5;
+    margin-right: 22px;
+    font-size: .87rem;
+    transition: 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #b3b3b3;
+}
+
+.active {
+    background-color: rgb(20, 20, 20);
+}
+
