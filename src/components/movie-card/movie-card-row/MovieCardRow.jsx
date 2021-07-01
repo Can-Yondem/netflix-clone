@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Card from "../card/Card";
 import "../movie-card-row/movierow.css";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import axios from "axios";
-
-
-const URL = "https://www.themoviedb.org/t/p/original";
 
 const MovieCardRow = ({ fetchURL, title }) => {
   const [movies, setMovies] = useState([]);
-  const [current, setCurrent] = useState(0);
-  const length = movies.length
+  const [activeSlider, setActiveSlider] = useState(false);
+  const scroller = useRef();
+
+
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -23,41 +22,51 @@ const MovieCardRow = ({ fetchURL, title }) => {
 
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
+    const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
+    setActiveSlider(true);
+    if (scrollLeft <= 10) {
+      scroller.current.scrollLeft = scrollLeft + 1195;
+    }
+    else if (scrollLeft < scrollWidth - clientWidth) {
+      scroller.current.scrollLeft = scrollLeft + 1250;
+    }
+    else {
+      setActiveSlider(false)
+      scroller.current.scrollLeft = 0;
+    }
   }
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
+    const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
+    setActiveSlider(true);
+    if (scrollLeft <= 1195) {
+      scroller.current.scrollLeft = scrollLeft - 1195;
+      setActiveSlider(false)
+    }
+    else if (scrollLeft < scrollWidth - clientWidth) {
+      scroller.current.scrollLeft = scrollLeft - 1250;
+    }
+    else {
+      setActiveSlider(false)
+      scroller.current.scrollLeft = 0;
+    }
   }
-
-  if (!Array.isArray(movies) || movies.length <= 0) {
-    return null;
-  }
-
-  /*
-             <div key={index} className={index === current ? "slide_active" : "slide"}>
-              {index === current && (<Card key={index} image={item.backdrop_path} />)}
-            </div>
-  */
 
   return (
-
     <div className="movies-row">
       <div className="title">
         <span>{title}</span>
       </div>
-
-      <div className="slider">
-        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
-        {movies.map((item, index) => {
-          return (
-            <div key={index} className={index === current ? "slide_active" : "slide"}>
-              {<Card key={index} image={item.backdrop_path} />}
-            </div>
-          )
-        }
-        )}
+      <div >
+        <div className="slider-container">
+          <BsChevronLeft className={activeSlider ? "left-arrow showLeftButton" : "left-arrow"} onClick={prevSlide} />
+          <BsChevronRight className="right-arrow" onClick={nextSlide} />
+          <div className={activeSlider ? "slider active" : "slider"} ref={scroller} >
+            {movies.map((item, index) =>
+              item.backdrop_path ? <Card key={index} image={item.backdrop_path} /> : null
+            )}
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,3 +1,9 @@
-.card-img img{
-    
+.card-img img {
+    min-width: 245px;
+    max-width: 245px;
+    height: 138px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px;
 }
+
