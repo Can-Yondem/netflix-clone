@@ -1,5 +1,6 @@
 .logo {
-    margin-right: 50px;
+    margin-right: 40px;
+    width: 95px;
 }
 
 .bold{
@@ -24,13 +25,13 @@
 
 .nav-list {
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 
 .nav-link{
     color: #e5e5e5;
+    font-size: 1vw;
     margin-right: 22px;
-    font-size: .87rem;
     transition: 0.3s ease;
 }
 
@@ -38,7 +39,51 @@
     color: #b3b3b3;
 }
 
+
+.second-nav .nav-list .nav-link {
+    font-size: 2vw;
+}
+
 .active {
     background-color: rgb(20, 20, 20);
 }
 
+.navigation-menu {
+    display: none;
+    font-size: 1vw;
+    margin-right: auto;
+    width: 50px;
+    text-align: center;
+}
+
+.navigation-menu a{
+    display:flex;
+    align-items: center;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.dropdown-icon {
+    font-size: 19px;
+}
+
+@media only screen and (max-width: 950px) {
+    .header-container {
+        height: 41px;
+    }
+
+    .logo {
+        margin-right: 20px;
+        width: 60px;
+    }
+}
+
+@media only screen and (max-width: 885px) {
+    .first-nav {
+        display: none;
+    }
+
+    .navigation-menu {
+        display: inline-block;
+    }
+}

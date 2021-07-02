@@ -1,0 +1,30 @@
+.sub-menu {
+    width: 250px;
+    height: 260px;
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    background-color: rgba(0,0,0,.9);
+    border-top: 2px solid #ffff;
+}
+
+.sub-menu-item {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-menu-link {
+    color: #ffff;
+}
+
+.sub-menu ul li:first-child > a:after {
+    content: "";
+    position:absolute;
+    left: 121px;
+    top: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffff;
+}

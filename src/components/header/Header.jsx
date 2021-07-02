@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/logo.png";
 import "./header.css";
 import { menuItems, secondMenuItems } from "./navbarItems";
+import Dropdown from "./dropdown/Dropdown";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
+  const [submenu, setSubmenu] = useState(false);
+
   const changeBackground = () => {
     if (window.scrollY > 0) {
       setNavbar(true);
@@ -12,15 +16,23 @@ const Header = () => {
       setNavbar(false);
     }
   };
-
   window.addEventListener("scroll", changeBackground);
 
   return (
     <div className={navbar ? "header-container active" : "header-container"}>
       <div className="logo">
         <a href="/">
-          <img src={Logo} alt="" width="95" />
+          <img src={Logo} alt="" />
         </a>
+      </div>
+      <div className="navigation-menu">
+        <a onClick={() => setSubmenu(!submenu)}>
+          <div>Gözat</div>
+          <div className="dropdown-icon"> <IoMdArrowDropdown /></div>
+        </a>
+      </div>  
+      <div className="dropdown">
+        {submenu && <Dropdown />}
       </div>
       <div className="first-nav ">
         <ul className="nav-list">
