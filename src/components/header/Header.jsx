@@ -62,7 +62,6 @@ const Header = () => {
                   src={item.icon}
                   alt="user-icon"
                   className={item.cName}
-                  width="32"
                 />
               ) : (
                 <a href={item.url} className={item.cName}>

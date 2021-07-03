@@ -44,6 +44,10 @@
     font-size: 2vw;
 }
 
+.nav-item img{
+    width: 32px;
+}
+
 .active {
     background-color: rgb(20, 20, 20);
 }
@@ -90,6 +94,10 @@
 }
 
 @media only screen and (max-width: 850px) {
+    .header-container {
+        height: 41px;
+    }
+    
     .navigation-menu {
         font-size: 1.4vw;
     }
@@ -100,5 +108,9 @@
 
     .second-nav .nav-list .nav-link {
         font-size: 2.6vw;
+    }
+
+    .nav-item img{
+        width: 3.7vw;
     }
 }
