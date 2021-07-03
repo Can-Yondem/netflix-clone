@@ -5,13 +5,14 @@ import { BsChevronRight, BsChevronLeft } from "react-icons/bs";
 import axios from "axios";
 
 const MovieCardRow = ({ fetchURL, title }) => {
-  const [movies, setMovies] = useState([]);
-  const [activeSlider, setActiveSlider] = useState(false);
-  const scroller = useRef();
+  const [movies, setMovies] = useState([]); //Prop olarak gelen URL için API'den gelen filmleri tutan state.
+  const [activeSlider, setActiveSlider] = useState(false); // Slider için ayarı tutan state.
+  const scroller = useRef(); //Slider scroll pozisyonunu okuyabilmek için slider referasını tutan state.
 
 
 
   useEffect(() => {
+    /* fetchURL propundan gelen URL'yi API'den ister.*/
     const fetchMovies = async () => {
       const request = await axios.get(fetchURL);
       setMovies(request.data.results);
@@ -20,15 +21,15 @@ const MovieCardRow = ({ fetchURL, title }) => {
     fetchMovies();
   }, [fetchURL]);
 
-
+  /*Sliderın sağ tuşu için scroll hareketi*/
   const nextSlide = () => {
     const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
     setActiveSlider(true);
-    if (scrollLeft <= 10) {
-      scroller.current.scrollLeft = scrollLeft + 1195;
+    if (scrollLeft < 1) {
+      scroller.current.scrollLeft = scrollLeft + clientWidth*(1-12.5/100);
     }
     else if (scrollLeft < scrollWidth - clientWidth) {
-      scroller.current.scrollLeft = scrollLeft + 1250;
+      scroller.current.scrollLeft = scrollLeft + clientWidth*(1-7.8/100);
     }
     else {
       setActiveSlider(false)
@@ -36,28 +37,26 @@ const MovieCardRow = ({ fetchURL, title }) => {
     }
   }
 
+  /*Sliderın sol tuşu için scroll hareketi*/
   const prevSlide = () => {
-    const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
-    setActiveSlider(true);
-    if (scrollLeft <= 1195) {
-      scroller.current.scrollLeft = scrollLeft - 1195;
+    const {scrollLeft, clientWidth } = scroller.current;
+    if (scrollLeft <= clientWidth*(1-12.5/100)) {
       setActiveSlider(false)
-    }
-    else if (scrollLeft < scrollWidth - clientWidth) {
-      scroller.current.scrollLeft = scrollLeft - 1250;
+      scroller.current.scrollLeft = scrollLeft - clientWidth*(1-12.5/100);
     }
     else {
-      setActiveSlider(false)
-      scroller.current.scrollLeft = 0;
+      scroller.current.scrollLeft = scrollLeft - clientWidth*(1-8/100);
     }
   }
 
   return (
     <div className="movies-row">
+      {/*Film kategorisini ekrana bastırır.*/}
       <div className="title">
         <span>{title}</span>
       </div>
-      <div >
+      <div>
+        {/*Netflix slider*/}
         <div className="slider-container">
           <BsChevronLeft className={activeSlider ? "left-arrow showLeftButton" : "left-arrow"} onClick={prevSlide} />
           <BsChevronRight className="right-arrow" onClick={nextSlide} />

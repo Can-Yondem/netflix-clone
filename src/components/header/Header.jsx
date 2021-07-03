@@ -6,9 +6,11 @@ import Dropdown from "./dropdown/Dropdown";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 const Header = () => {
-  const [navbar, setNavbar] = useState(false);
-  const [submenu, setSubmenu] = useState(false);
+  const [navbar, setNavbar] = useState(false); //Navbar tetikleme state'i
+  const [submenu, setSubmenu] = useState(false); //Submenu tetikleme State'i
 
+
+  /* Navbar tetiklenmesi için scroll pozisyonunu dinler. */
   const changeBackground = () => {
     if (window.scrollY > 0) {
       setNavbar(true);
@@ -25,15 +27,19 @@ const Header = () => {
           <img src={Logo} alt="" />
         </a>
       </div>
+
+      {/*Submenu*/}
       <div className="navigation-menu">
         <a onClick={() => setSubmenu(!submenu)}>
           <div>Gözat</div>
           <div className="dropdown-icon"> <IoMdArrowDropdown /></div>
         </a>
-      </div>  
+      </div>
       <div className="dropdown">
         {submenu && <Dropdown />}
       </div>
+
+      {/*Navbar Sol Menu*/}
       <div className="first-nav ">
         <ul className="nav-list">
           {menuItems.map((item, index) => (
@@ -45,6 +51,8 @@ const Header = () => {
           ))}
         </ul>
       </div>
+
+      {/*Navbar Sağ Menu*/}
       <div className="second-nav">
         <ul className="nav-list">
           {secondMenuItems.map((item, index) => (

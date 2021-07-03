@@ -1,45 +1,45 @@
+/* @Movie-Row */
 .movies-row {
-    position: relative;
-    top: -170px;
-    margin-bottom: 50px;
+    margin-bottom: 3.66vw;
 }
 
 .title {
     color: #ffff;
-    font-size: 20px;
     font-weight: bold;
+    font-size: 1.46vw;
     padding: 0 0 10px 4%;
-
 }
 
 .slider-container {
     position: relative;
-    height: 140px;
     width: 100%;
+    height: 10.24vw;
     overflow: hidden;
 }
 
 .slider {
     position: absolute;
-    left: 4%;
     width: 100%;
+    left: 4%;
     display: flex;
     overflow: hidden;
     scroll-behavior: smooth;
-    transition: left .2s ease;
+    transition: left .3s ease;
 }
 
 .active {
     left: 0;
 }
 
+/* @Slider Buttons */
 .right-arrow {
     color: rgba(255, 255, 255, 0);
     background-color: rgba(0, 0, 0, .6);
     position: absolute;
+    width: 4%;
     height: 100%;
     right: 0;
-    font-size: 50px;
+    font-size: 3.66vw;
     transition: color .5s ease;
     z-index: 5;
 }
@@ -52,9 +52,10 @@
     color: rgb(255, 255, 255, 0);
     background-color: rgba(0, 0, 0, .6);
     position: absolute;
+    width: 4%;
     height: 100%;
     left: 0;
-    font-size: 50px;
+    font-size: 3.66vw;
     transition: color .5s ease;
     z-index: 5;
     display: none;
@@ -66,4 +67,24 @@
 
 .showLeftButton {
     display: inline-block;
+}
+
+
+/* @Breakpoints */
+@media only screen and (max-width: 1100px) {
+    .slider-container {
+        height: 12.5vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .slider-container {
+        height: 16.5vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .slider-container {
+        height: 24.5vw;
+    }
 }

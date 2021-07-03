@@ -1,12 +1,11 @@
+/* @Navbar-Logo*/
 .logo {
     margin-right: 40px;
     width: 95px;
 }
 
-.bold{
-    font-weight: bold;
-}
 
+/* @Navbar*/
 .header-container {
     position: fixed;
     display: flex;
@@ -19,6 +18,7 @@
     transition: background .5s ease;
 }
 
+/* @First-Navbar */
 .first-nav {
     margin-right: auto;
 }
@@ -39,7 +39,7 @@
     color: #b3b3b3;
 }
 
-
+/* @Second-Navbar*/
 .second-nav .nav-list .nav-link {
     font-size: 2vw;
 }
@@ -48,12 +48,12 @@
     background-color: rgb(20, 20, 20);
 }
 
+/* @Submenu */
 .navigation-menu {
     display: none;
     font-size: 1vw;
     margin-right: auto;
     width: 50px;
-    text-align: center;
 }
 
 .navigation-menu a{
@@ -61,13 +61,16 @@
     align-items: center;
     font-weight: bold;
     color: #ffff;
+    cursor: pointer;
 }
 
 .dropdown-icon {
-    font-size: 19px;
+    font-size: 2.5vw;
+    display: flex;
 }
 
-@media only screen and (max-width: 950px) {
+/* @Breakpoints */
+@media only screen and (max-width: 885px) {
     .header-container {
         height: 41px;
     }
@@ -76,14 +79,26 @@
         margin-right: 20px;
         width: 60px;
     }
-}
 
-@media only screen and (max-width: 885px) {
     .first-nav {
         display: none;
     }
 
     .navigation-menu {
         display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .navigation-menu {
+        font-size: 1.4vw;
+    }
+
+    .logo {
+        width: 9vw;
+    }
+
+    .second-nav .nav-list .nav-link {
+        font-size: 2.6vw;
     }
 }

@@ -1,7 +1,8 @@
 .footer-container {
-    width: 70%;
+    width: 80%;
     margin: 0 auto 20px;
 }
+
 /*@Social Media*/
 .social-media {
     margin-bottom: 10px;
@@ -64,3 +65,9 @@
     color: #ffff;
 }
 
+/*@Breakpoints*/
+@media only screen and (max-width: 800px) {
+    .footer-link {
+        width: 50%;
+    }
+}

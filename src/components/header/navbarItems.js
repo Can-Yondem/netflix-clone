@@ -6,7 +6,7 @@ export const menuItems = [
     {
         title: "Ana Sayfa",
         url: "#",
-        cName: "nav-link bold"
+        cName: "nav-link"
     },
     {
         title: "Diziler",

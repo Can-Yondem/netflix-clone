@@ -5,6 +5,7 @@ import { ImFacebook2, ImTwitter, ImInstagram, ImYoutube } from "react-icons/im";
 const Footer = () => {
   return (
     <div className="footer-container">
+      {/*Sosyal medya butonları*/}
       <div className="social-media">
         <ul className="icon-list">
           <li className="icon-link">
@@ -29,7 +30,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-
+      {/*Footer linkleri*/}
       <div className="footer-links">
         <ul className="footer-link-list">
           <li className="footer-link">

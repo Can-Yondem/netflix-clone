@@ -4,6 +4,7 @@ const URL = "https://www.themoviedb.org/t/p/original";
 
 const Card = ({ image }) => {
   return (
+    /*Slider içindeki resim.*/
     <div className="card-img">
       <img src={`${URL}${image}`} alt="" />
     </div>

@@ -2,7 +2,7 @@
     width: 250px;
     height: 260px;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 40px;
     background-color: rgba(0,0,0,.9);
     border-top: 2px solid #ffff;
@@ -17,12 +17,13 @@
 
 .sub-menu-link {
     color: #ffff;
+    font-size: 13px;
 }
 
 .sub-menu ul li:first-child > a:after {
     content: "";
     position:absolute;
-    left: 121px;
+    left: 110px;
     top: -8px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
