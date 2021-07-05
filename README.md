@@ -1,6 +1,6 @@
 # **Netflix Clone**
 ## Uygulamadan Resimler
-![Netflix](./readme-img/clone-ss-1.png)
+![Netflix](./readme-img/clone-ss-1.PNG)
 ![Netflix](./readme-img/clone-ss-2.jpeg)
 
 ## Özet
@@ -16,7 +16,7 @@ Projeyi çalıştırabilmek için proje klasöründe
 
 komutu ile projenin bağımlı olduğu kütüphanelerin kurulumunu yapmanız gerekmektedir.
 
-İndirme işlemi tamamlandıktan sonra
+İndirme işlemi tamamlandıysanız
 
 `npm start`
 
