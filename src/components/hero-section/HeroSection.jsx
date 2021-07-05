@@ -10,7 +10,6 @@ const URL = "https://www.themoviedb.org/t/p/original";
 const HeroSection = () => {
   const [movies, setMovies] = useState([]); //Banner'da ve banner'ın kartında gösterilcek filmleri tutan state.
 
-
   useEffect(() => {
     /* Axios kütüphanesi ile API'den filmlerimi çektik. */
     const fetchMovies = async () => {
@@ -27,12 +26,13 @@ const HeroSection = () => {
     fetchMovies();
   }, []);
 
-  return (
-    <div className="hero-img-container">
-      {/* Banner*/}
-      <img src={`${URL}${movies.backdrop_path}`} alt="" />
+  const style = {backgroundSize: "cover",
+                 backgroundImage: `url(${URL}${movies.backdrop_path})`,
+                 backgroundPosition: "center center"};
 
-      {/*Banner'a görüntülenen film kartı*/}
+  return (
+    <div className="hero-img-container" style={style}>
+      {/*Banner'da görüntülenen film kartı*/}
       <div className="hero-card-container">
         <div className="card-title">
           <h1>{movies.name}</h1>

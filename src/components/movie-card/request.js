@@ -10,9 +10,7 @@ const movieGenreRequest = {
     "Comedy": `${url}discover/movie?api_key=${key}&with_genres=35`,
     "Crime": `${url}discover/movie?api_key=${key}&with_genres=80`,
     "Documentary": `${url}discover/movie?api_key=${key}&with_genres=99`,
-    "Fantasy": `${url}discover/movie?api_key=${key}&with_genres=14`,
     "Horror": `${url}discover/movie?api_key=${key}&with_genres=27`,
-    "Western": `${url}discover/movie?api_key=${key}&with_genres=37`,
     "War": `${url}discover/movie?api_key=${key}&with_genres=10752`,
     "Family": `${url}discover/movie?api_key=${key}&with_genres=10751`,
 }

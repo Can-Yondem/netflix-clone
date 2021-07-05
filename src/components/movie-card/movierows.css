@@ -1,8 +1,3 @@
 .movierow-container {
     position: relative;
-    top: -12.45vw;
-}
-
-.movierow-container:last-child {
-    margin-bottom: 0;
 }

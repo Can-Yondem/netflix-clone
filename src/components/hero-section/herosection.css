@@ -1,17 +1,26 @@
 /* @Banner-Image */
-.hero-img-container img{
+.hero-img-container {
     width: 100%;
+    height: 44.65vw;
+}
+
+.hero-img-container::after {
+    content: "";
+    background: linear-gradient(180deg,transparent,rgb(19, 19, 19,.95) 40%,#141414);
+    position: absolute;
+    top: 560px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 /* Banner-Card */
 .hero-card-container  {
-    position: absolute;
-    top: 0;
     padding: 13.90vw 4%;
     max-width: 60%;
-    height: 55.63vw;
+    height: 44.65vw;
     color: #ffff;
-    background: linear-gradient(77deg,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 85%);
+    background: linear-gradient(77deg,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 55%);
 }
 
 .card-title {
@@ -69,6 +78,72 @@
     font-size: 1.31vw;
 }
 
+@media only screen and (max-width: 800px) {
+    .hero-img-container {
+        width: 100%;
+        height: 50vw;
+    }
+    .hero-card-container  {
+        max-width: 90%;
+        height: 50vw;
+    }
+
+    .card-title {
+        font-size: 2.7vw;
+    }
+    
+    .card-description p{
+        font-size: 1.6vw;
+        width: 70%;
+        padding-bottom: 1.5vw;
+    }
+
+    .btn-play {
+        font-size: 2vw;
+    }
+
+    .btn-information {
+        font-size: 2vw;
+    }
+    
+    .btn-icon{
+        font-size: 2vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .hero-img-container {
+        width: 100%;
+        height: 60vw;
+    }
+    .hero-card-container  {
+        max-width: 100%;
+        height: 60vw;
+    }
+
+    .card-title {
+        font-size: 3.1vw;
+    }
+    
+    .card-description p{
+        font-size: 2.3vw;
+        width: 70%;
+        padding-bottom: 1.5vw;
+    }
+
+    .btn-play {
+        font-size: 2.5vw;
+    }
+
+    .btn-information {
+        font-size: 2.5vw;
+
+    }
+
+    .btn-icon{
+        font-size: 2.4vw;
+    }
+}
 
 
 

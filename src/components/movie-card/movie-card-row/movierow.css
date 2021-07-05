@@ -6,25 +6,32 @@
 .title {
     color: #ffff;
     font-weight: bold;
-    font-size: 1.46vw;
-    padding: 0 0 10px 4%;
+    font-size: 1.7vw;
+    padding-left: 4%;
+    padding-bottom: 5px;
 }
 
 .slider-container {
     position: relative;
     width: 100%;
-    height: 10.24vw;
-    overflow: hidden;
+    height: 11vw;
+    display: flex;
+    align-items: center;
 }
 
 .slider {
     position: absolute;
     width: 100%;
-    left: 4%;
+    height: 11vw;
     display: flex;
-    overflow: hidden;
+    align-items: center;
     scroll-behavior: smooth;
     transition: left .3s ease;
+    overflow: scroll;
+}
+
+.slider::-webkit-scrollbar {
+    display: none;
 }
 
 .active {
@@ -36,8 +43,8 @@
     color: rgba(255, 255, 255, 0);
     background-color: rgba(0, 0, 0, .6);
     position: absolute;
-    width: 4%;
-    height: 100%;
+    width: 4.1vw;
+    height: 10.10vw;
     right: 0;
     font-size: 3.66vw;
     transition: color .5s ease;
@@ -52,8 +59,8 @@
     color: rgb(255, 255, 255, 0);
     background-color: rgba(0, 0, 0, .6);
     position: absolute;
-    width: 4%;
-    height: 100%;
+    width: 4.1vw;
+    height: 10.10vw;
     left: 0;
     font-size: 3.66vw;
     transition: color .5s ease;
@@ -72,19 +79,68 @@
 
 /* @Breakpoints */
 @media only screen and (max-width: 1100px) {
+    .slider {
+        height: 13.5vw;
+    }
+
     .slider-container {
-        height: 12.5vw;
+        height: 13.5vw;
+    } 
+
+    .title {
+        font-size: 1.9vw;
+    }
+
+    .right-arrow {
+        height: 12.8vw;
+        width: 4.6vw;
+    }
+
+    .left-arrow {
+        height: 12.8vw;
+        width: 4.6vw;
     }
 }
 
 @media only screen and (max-width: 800px) {
     .slider-container {
-        height: 16.5vw;
+        height: 18vw;
+    } 
+    .slider {
+        height: 18vw;
+    } 
+
+    .title {
+        font-size: 2.3vw;
+    }
+
+    .right-arrow {
+        height: 17vw;
+    }
+
+    .left-arrow {
+        height: 12.8vw;
     }
 }
 
 @media only screen and (max-width: 550px) {
     .slider-container {
-        height: 24.5vw;
+        height: 27vw;
+    }
+
+    .slider {
+        height: 27vw;
+    }
+
+    .title {
+        font-size: 3.5vw;
+    }
+
+    .right-arrow {
+        height: 25vw;
+    }
+
+    .left-arrow {
+        height: 25vw;
     }
 }

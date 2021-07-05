@@ -9,8 +9,6 @@ const MovieCardRow = ({ fetchURL, title }) => {
   const [activeSlider, setActiveSlider] = useState(false); // Slider için ayarı tutan state.
   const scroller = useRef(); //Slider scroll pozisyonunu okuyabilmek için slider referasını tutan state.
 
-
-
   useEffect(() => {
     /* fetchURL propundan gelen URL'yi API'den ister.*/
     const fetchMovies = async () => {
@@ -26,10 +24,10 @@ const MovieCardRow = ({ fetchURL, title }) => {
     const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
     setActiveSlider(true);
     if (scrollLeft < 1) {
-      scroller.current.scrollLeft = scrollLeft + clientWidth*(1-12.5/100);
+      scroller.current.scrollLeft = scrollLeft + clientWidth * (1 - 8.5 / 100);
     }
     else if (scrollLeft < scrollWidth - clientWidth) {
-      scroller.current.scrollLeft = scrollLeft + clientWidth*(1-7.8/100);
+      scroller.current.scrollLeft = scrollLeft + clientWidth * (1 - 8 / 100);
     }
     else {
       setActiveSlider(false)
@@ -39,16 +37,15 @@ const MovieCardRow = ({ fetchURL, title }) => {
 
   /*Sliderın sol tuşu için scroll hareketi*/
   const prevSlide = () => {
-    const {scrollLeft, clientWidth } = scroller.current;
-    if (scrollLeft <= clientWidth*(1-12.5/100)) {
+    const { scrollLeft, clientWidth } = scroller.current;
+    if (scrollLeft <= clientWidth * (1 - 12.5 / 100)) {
       setActiveSlider(false)
-      scroller.current.scrollLeft = scrollLeft - clientWidth*(1-12.5/100);
+      scroller.current.scrollLeft = scrollLeft - clientWidth * (1 - 12.5 / 100);
     }
     else {
-      scroller.current.scrollLeft = scrollLeft - clientWidth*(1-8/100);
+      scroller.current.scrollLeft = scrollLeft - clientWidth * (1 - 9 / 100);
     }
   }
-
   return (
     <div className="movies-row">
       {/*Film kategorisini ekrana bastırır.*/}
@@ -62,7 +59,9 @@ const MovieCardRow = ({ fetchURL, title }) => {
           <BsChevronRight className="right-arrow" onClick={nextSlide} />
           <div className={activeSlider ? "slider active" : "slider"} ref={scroller} >
             {movies.map((item, index) =>
-              item.backdrop_path ? <Card key={index} image={item.backdrop_path} /> : null
+              item.backdrop_path ? <Card 
+              key={index} 
+              image={item.backdrop_path} /> : null
             )}
           </div>
         </div>
