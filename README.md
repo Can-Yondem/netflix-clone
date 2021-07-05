@@ -16,6 +16,7 @@ Projeyi çalıştırabilmek için proje klasöründe
 
 komutu ile projenin bağımlı olduğu kütüphanelerin kurulumunu yapmanız gerekmektedir.
 
+
 İndirme işlemi tamamlandıysanız
 
 `npm start`
