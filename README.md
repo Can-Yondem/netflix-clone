@@ -1,10 +1,10 @@
 # **Netflix Clone**
 ## Uygulamadan Resimler
-![Netflix](./readme-img/clone-ss-1.png)
+![Netflix](./readme-img/clone-ss-1.PNG)
 ![Netflix](./readme-img/clone-ss-2.jpeg)
 
 ## Özet
-**HTML**, **CSS**, **JavaScript** ve **React.js** ile yazmış olduğum bir uygulamadır. Uygulamanın önyüzü Netflix ile aynı olmakla beraber uygulama responsivedir. Uygulama içindeki veriler The Movie Database(TMDb) API servisinden alınmaktadır. 
+**HTML**, **CSS**, **JavaScript** ve **React.js** ile yazmış olduğum bir uygulamadır. Uygulamanın önyüzü Netflix ile aynı olmakla beraber uygulama responsivedir. Uygulama içindeki veriler The Movie Database(TMDb) API servisinden alınmaktadır. Uygulamayı [buraya tıklayarak](https://netflix-clone-nf.netlify.app/) inceleyebilrisiniz.
 
 ## Projede Kullanılan Teknoloji/Metotlar
 The Movie Database(TMDb) API servisinden verileri almak için Axios kütüphanesi ile gerekli sorgular yollanıp veriler alınmıştır. Alınan veriler React.js'in özelliği olan hooklar ile tutulup aynı şekilde React.js kütüphanesi ile uygulamanın önyüzü oluşturuldu. 
@@ -16,7 +16,8 @@ Projeyi çalıştırabilmek için proje klasöründe
 
 komutu ile projenin bağımlı olduğu kütüphanelerin kurulumunu yapmanız gerekmektedir.
 
-İndirme işlemi tamamlandıktan sonra
+
+İndirme işlemi tamamlandıysanız
 
 `npm start`
 
