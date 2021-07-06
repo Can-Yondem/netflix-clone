@@ -4,16 +4,6 @@
     height: 44.65vw;
 }
 
-.hero-img-container::after {
-    content: "";
-    background: linear-gradient(180deg,transparent,rgb(19, 19, 19,.95) 40%,#141414);
-    position: absolute;
-    top: 560px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
 /* Banner-Card */
 .hero-card-container  {
     padding: 13.90vw 4%;

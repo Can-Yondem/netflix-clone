@@ -18,7 +18,7 @@ const MovieCardRow = ({ fetchURL, title }) => {
     };
     fetchMovies();
   }, [fetchURL]);
-
+  console.log(movies);
   /*Sliderın sağ tuşu için scroll hareketi*/
   const nextSlide = () => {
     const { scrollWidth, scrollLeft, clientWidth } = scroller.current;
@@ -61,7 +61,13 @@ const MovieCardRow = ({ fetchURL, title }) => {
             {movies.map((item, index) =>
               item.backdrop_path ? <Card 
               key={index} 
-              image={item.backdrop_path} /> : null
+              image={item.backdrop_path} 
+              overview={item.overview}
+              title={item.name || item.original_title}
+              date={item.release_date || item.first_air_date}
+              vote={item.vote_average}
+              genre={title}
+              /> : null
             )}
           </div>
         </div>
