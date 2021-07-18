@@ -10,7 +10,7 @@ const MovieCardRows = () => {
         Birinicisi title. İkinicisi fetchURL.
         Title propuna ekranda gösterilecek film satırının kategorisinin ismi geçiir.
         fetchURL ise movieRequestteki API URL'lerinin geçildiği proptur.*/}
-      <MovieCardRow fetchURL={movieRequest["Netflix Originals"]} title="Netflix Orijinalleri" />
+      <MovieCardRow fetchURL={movieRequest["Netflix Originals"]} title="Netflix Yapımı" />
       <MovieCardRow fetchURL={movieRequest.Trending} title="Trend" />
       <MovieCardRow fetchURL={movieRequest["Top Rated"]} title="En Çok Oy Alan" />
       <MovieCardRow fetchURL={movieRequest.Action} title="Aksiyon" />

@@ -31,7 +31,7 @@ const Header = () => {
       {/*Submenu*/}
       <div className="navigation-menu">
         <a onClick={() => setSubmenu(!submenu)}>
-          <div>Gözat</div>
+          <span>Gözat</span>
           <div className="dropdown-icon"> <IoMdArrowDropdown /></div>
         </a>
       </div>

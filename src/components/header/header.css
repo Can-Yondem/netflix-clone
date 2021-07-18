@@ -80,9 +80,9 @@
     }
 
     .logo {
-        margin-right: 20px;
-        width: 60px;
+        width: 9vw;
     }
+
 
     .first-nav {
         display: none;
@@ -90,6 +90,14 @@
 
     .navigation-menu {
         display: inline-block;
+    }
+
+    .second-nav .nav-list .nav-link {
+        font-size: 2.3vw;
+    }
+
+    .navigation-menu {
+        font-size: 1.8vw;
     }
 }
 
@@ -99,15 +107,11 @@
     }
     
     .navigation-menu {
-        font-size: 1.4vw;
-    }
-
-    .logo {
-        width: 9vw;
+        font-size: 1.9vw;
     }
 
     .second-nav .nav-list .nav-link {
-        font-size: 2.6vw;
+        font-size: 2.8vw;
     }
 
     .nav-item img{
