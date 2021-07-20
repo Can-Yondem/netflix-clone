@@ -74,7 +74,7 @@
 }
 
 /* @Breakpoints */
-@media only screen and (max-width: 885px) {
+@media only screen and (max-width: 850px) {
     .header-container {
         height: 41px;
     }
@@ -83,38 +83,30 @@
         width: 9vw;
     }
 
-
     .first-nav {
         display: none;
     }
 
     .navigation-menu {
         display: inline-block;
-    }
-
-    .second-nav .nav-list .nav-link {
-        font-size: 2.3vw;
-    }
-
-    .navigation-menu {
         font-size: 1.8vw;
     }
-}
-
-@media only screen and (max-width: 850px) {
-    .header-container {
-        height: 41px;
-    }
-    
-    .navigation-menu {
-        font-size: 1.9vw;
-    }
 
     .second-nav .nav-list .nav-link {
-        font-size: 2.8vw;
+        font-size: 2.7vw;
     }
 
     .nav-item img{
         width: 3.7vw;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .navigation-menu {
+        font-size: 2.7vw;
+    }
+
+    .second-nav .nav-list .nav-link {
+        font-size: 3.4vw;
     }
 }
